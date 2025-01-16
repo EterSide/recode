@@ -23,10 +23,15 @@ public class MainController {
     }
 
     @GetMapping("/lists")
-    public String bootTest(Model model) {
+    public String tables(Model model) {
         List<Recode> recodes = recodeService.recodeList();
         model.addAttribute("recodes", recodes);
         return "tables";
+    }
+
+    @GetMapping("/player")
+    public String player() {
+        return "player";
     }
 
 }
