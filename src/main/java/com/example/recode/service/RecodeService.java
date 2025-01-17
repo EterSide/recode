@@ -1,5 +1,7 @@
 package com.example.recode.service;
 
+import com.example.recode.entity.Map;
+import com.example.recode.entity.Player;
 import com.example.recode.entity.Recode;
 import com.example.recode.repository.RecodeRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +21,14 @@ public class RecodeService {
 
     public List<Recode> recodeList() {
         return recodeRepository.findAll();
+    }
+
+    public List<Recode> getPlayerRecode(Player player) {
+        return recodeRepository.findByPlayer1_id(player.getId());
+    }
+
+    public List<Recode> getMapRecode(Map map) {
+        return recodeRepository.findByMap_id(map.getId());
     }
 
 

@@ -29,4 +29,8 @@ public class PlayerService {
 
     }
 
+    public Optional<Player> getPlayer(long id) {
+        return playerRepository.findById(id);
+    }
+
 }
