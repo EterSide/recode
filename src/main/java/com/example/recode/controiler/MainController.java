@@ -30,8 +30,17 @@ public class MainController {
     }
 
     @GetMapping("/player")
-    public String player() {
+    public String player(Model model) {
+        List<Recode> recodes = recodeService.recodeList();
+        model.addAttribute("recodes", recodes);
         return "player";
+    }
+
+    @GetMapping("/map")
+    public String map(Model model) {
+        List<Recode> recodes = recodeService.recodeList();
+        model.addAttribute("recodes", recodes);
+        return "map";
     }
 
 }
