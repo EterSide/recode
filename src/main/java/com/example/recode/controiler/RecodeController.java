@@ -39,7 +39,7 @@ public class RecodeController {
         r.setResult(true);
         recodeService.save(r);
         p1.setWin(p1.getWin()+1);
-        p2.setLose(p1.getLose()+1);
+        p2.setLose(p2.getLose()+1);
         playerService.save(p1);
         playerService.save(p2);
 
